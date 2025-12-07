@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# Redirigir a index.php si se accede al directorio raíz
+DirectoryIndex index.php
+
+# Permitir acceso a archivos estáticos
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^assets/ - [L]
+
+# Permitir acceso a archivos de configuración
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^config/ - [L]
+
+# Permitir acceso a archivos de includes
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^includes/ - [L]
+
+# Permitir acceso a archivos de módulos
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^modules/ - [L]
+
+# Redirigir todas las demás solicitudes a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

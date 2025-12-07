@@ -1,0 +1,298 @@
+/**
+ * Estilos del Dashboard - Aplicar a todos los módulos
+ * Sistema de Control Escolar
+ */
+
+/* Variables CSS - Temática Infantil */
+:root {
+    --sunny-yellow: #FFD700;
+    --sky-blue: #4ECDC4;
+    --grass-green: #10B981;
+    --coral: #FF6B6B;
+    --purple: #A78BFA;
+    --pink: #F472B6;
+    --orange: #FB923C;
+    --lime: #84CC16;
+}
+
+/* Body con fondo degradado */
+body.dashboard-style {
+    background: linear-gradient(135deg, #E0F2FE 0%, #FEF3C7 50%, #FCE7F3 100%);
+    min-height: 100vh;
+    font-family: 'Comic Sans MS', 'Chalkboard', 'Marker Felt', cursive;
+}
+
+/* Cards de estadísticas */
+.stat-card {
+    border-radius: 25px;
+    border: none;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.stat-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.stat-card.students {
+    background: linear-gradient(135deg, var(--sky-blue) 0%, #2196F3 100%);
+}
+
+.stat-card.teachers {
+    background: linear-gradient(135deg, var(--grass-green) 0%, #059669 100%);
+}
+
+.stat-card.subjects {
+    background: linear-gradient(135deg, var(--orange) 0%, #EA580C 100%);
+}
+
+.stat-card.groups {
+    background: linear-gradient(135deg, var(--purple) 0%, #7C3AED 100%);
+}
+
+.stat-card.attendance {
+    background: linear-gradient(135deg, var(--coral) 0%, #EF4444 100%);
+}
+
+.stat-card.events {
+    background: linear-gradient(135deg, var(--pink) 0%, #EC4899 100%);
+}
+
+.stat-card.library {
+    background: linear-gradient(135deg, var(--lime) 0%, #65A30D 100%);
+}
+
+.stat-card.inventory {
+    background: linear-gradient(135deg, var(--sky-blue) 0%, #0EA5E9 100%);
+}
+
+.stat-card.payments {
+    background: linear-gradient(135deg, var(--orange) 0%, #F97316 100%);
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.95);
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Cards de contenido */
+.content-card {
+    background: white;
+    border-radius: 25px;
+    border: 3px solid var(--sunny-yellow);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.content-card-header {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+    padding: 1.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.content-card-header i {
+    margin-right: 1rem;
+    font-size: 1.8rem;
+}
+
+/* Botones infantiles */
+.btn-school {
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-school:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.btn-students {
+    background: linear-gradient(135deg, var(--sky-blue) 0%, #2196F3 100%);
+    color: white;
+}
+
+.btn-teachers {
+    background: linear-gradient(135deg, var(--grass-green) 0%, #059669 100%);
+    color: white;
+}
+
+.btn-subjects {
+    background: linear-gradient(135deg, var(--orange) 0%, #EA580C 100%);
+    color: white;
+}
+
+.btn-attendance {
+    background: linear-gradient(135deg, var(--coral) 0%, #EF4444 100%);
+    color: white;
+}
+
+.btn-events {
+    background: linear-gradient(135deg, var(--pink) 0%, #EC4899 100%);
+    color: white;
+}
+
+.btn-library {
+    background: linear-gradient(135deg, var(--lime) 0%, #65A30D 100%);
+    color: white;
+}
+
+.btn-inventory {
+    background: linear-gradient(135deg, var(--sky-blue) 0%, #0EA5E9 100%);
+    color: white;
+}
+
+.btn-payments {
+    background: linear-gradient(135deg, var(--orange) 0%, #F97316 100%);
+    color: white;
+}
+
+/* Tablas con estilo */
+.table-module {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.table-module thead {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+    color: white;
+}
+
+.table-module tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table-module tbody tr:hover {
+    background: rgba(167, 139, 250, 0.1);
+    transform: scale(1.01);
+}
+
+/* Badges con estilo */
+.badge-module {
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Formularios con estilo */
+.form-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 253, 250, 0.9) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 3px solid var(--sunny-yellow);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 0.25rem rgba(167, 139, 250, 0.25);
+}
+
+/* Alerts con estilo */
+.alert-module {
+    border-radius: 20px;
+    border: 3px solid;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Paginación con estilo */
+.pagination .page-link {
+    border-radius: 15px;
+    margin: 0 0.25rem;
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    font-weight: bold;
+}
+
+.pagination .page-item.active .page-link {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+    border-color: var(--purple);
+    color: white;
+}
+
+.pagination .page-link:hover {
+    background: rgba(167, 139, 250, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .btn-school {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+
+
