@@ -1444,7 +1444,7 @@ Este proyecto está disponible para uso educativo. Ver archivo `LICENSE` para m�
 
 **Desarrollado con ❤️ para la educación**
 
-*Última actualización: 2024*
+*Última actualización: 2025*
 
 ---
 
